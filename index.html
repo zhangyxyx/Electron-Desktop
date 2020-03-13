@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+    <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+    <title>Hello World!</title>
+    <link rel="stylesheet" href="css/index.css" />
+  </head>
+  <body>
+    <div class="header" >
+      <div class="h_left">QQ</div>
+      <div class="h_right">
+        <span><img src="img/set.png"></span>
+        <span><img src="img/small.png"></span>
+        <span><img src="img/close.png"></span>
+      </div>
+    </div>
+    <div class="logo">
+      
+    </div>
+    <div class="content">
+      <div class="c1"></div>
+      <div class="c2">
+        <div><img src="img/qq.png"><input type="text" placeholder="账户名"/></div>
+        <div><img src="img/pwd.png"><input type="text" placeholder="密码"/></div>
+        <div class="tip">
+          <input type="checkbox"><label>自动登录</label>
+          <input type="checkbox"><label>记住密码</label>
+          <label>找回密码</label>
+        </div>
+        <button><img src="img/safe.png">安全登录</button>
+      </div>
+    </div>
+
+    <!-- You can also require other files to run in this process -->
+    <script src="./renderer.js"></script>
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <script src="js/index.js"></script>
+  </body>
+</html>

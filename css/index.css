@@ -1,0 +1,102 @@
+*{
+    margin:0px;
+    padding:0px;
+}
+body{
+    width:100%;
+    height:100%
+}
+.header{
+    width:100%;
+    height:200px;
+    background:url('../img/bg.png');
+    padding:10px
+}
+.header .h_left{
+    font-size:16px;
+    color:#fff;
+    float:left;
+}
+.header .h_right{
+    float:right;
+}
+.header .h_right span{
+    display:block;
+    float:left;
+    width:20px;
+    height:20px;
+}
+.header .h_right img{
+    width:100%
+}
+.logo{
+    width:60px;
+    height:60px;
+    background:#47d2fb;
+    border-radius:50%;
+    position:absolute;
+    left:50%;
+    margin-left:-20px;
+    top:190px
+}
+.c2{
+    width:300px;
+    margin:30px auto;
+
+}
+.c2 img{
+    width:20px;
+    float:left;
+}
+.c2 input{
+    border-left:none;
+    border-top:none;
+    border-right:none;
+    height:25px;
+}
+.c2 div{
+    width:100%;
+}
+.c2 div:nth-child(1) input{
+    width:calc(100% - 20px)
+}
+.c2 div:nth-child(1) img{
+    margin-top:3px
+}
+.c2 div:nth-child(2) input{
+    width:calc(100% - 20px)
+}
+.c2 div:nth-child(2) img{
+    margin-top:3px
+}
+.c2 .tip{
+    width:100%;
+    height:40px;
+    line-height:40px;
+}
+.c2 .tip label{
+    margin-right: 34px;
+    float: left;
+    font-size: 14px;
+    color: #7d7d7d;
+}
+.c2 .tip input{
+    float:left;
+    margin-top:8px;
+
+}
+button{
+    width: 100%;
+    border-radius: 3px;
+    background: #47d2fb;
+    border: 1px solid #47d2fb;
+    color: #fff;
+    height: 35px;
+    line-height: 35px;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+}
+button img{
+    width:20px;
+}
