@@ -7,8 +7,8 @@ body{
     height:100%
 }
 .header{
-    width:100%;
-    height:200px;
+
+    height:100px;
     background:url('../img/bg.png');
     padding:10px
 }
@@ -23,8 +23,9 @@ body{
 .header .h_right span{
     display:block;
     float:left;
-    width:20px;
-    height:20px;
+    width:15px;
+    height:15px;
+    margin:0px 5px;
 }
 .header .h_right img{
     width:100%
@@ -37,10 +38,10 @@ body{
     position:absolute;
     left:50%;
     margin-left:-20px;
-    top:190px
+    top:90px
 }
 .c2{
-    width:300px;
+    width:310px;
     margin:30px auto;
 
 }
@@ -96,7 +97,11 @@ button{
     display: flex;
     justify-items: center;
     align-items: center;
+    cursor:pointer;
 }
 button img{
     width:20px;
+}
+button p{
+    margin:0 auto
 }
