@@ -57,6 +57,31 @@ $ npm install && npm start
 # 开发中打开新页面
 在当前文件夹中打开终端输入：electron .
 
+## 项目
+1. 跳转页面
+在js文件中
+const {ipcRenderer} = require('electron')
+
+$(function(){
+    $("button").click(function(){
+        //window.location.href='./frame/qqiframe.html'
+        ipcRenderer.send('add')
+    })
+
+})
+在main.js文件中
+const {app, BrowserWindow,Menu,ipcMain} = require('electron')
+let newwin
+ipcMain.on('add',()=>{
+  newwin = new BrowserWindow({
+    width: 800, 
+    height: 600,
+    frame:false,
+    parent: mainWindow, //win是主窗口
+  })
+  newwin.loadURL(path.join('file:',__dirname,'frame/qqiframe.html')); //new.html是新开窗口的渲染进程
+  newwin.on('closed',()=>{newwin = null})
+})
 ## 报错
 1. 安装electron的时候一直卡在node install.js
 解决：先在.npmrc文件中添加electron_mirror="https://cdn.npm.taobao.org/dist/electron/";
