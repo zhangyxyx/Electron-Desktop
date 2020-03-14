@@ -62,4 +62,13 @@ $ npm install && npm start
 解决：先在.npmrc文件中添加electron_mirror="https://cdn.npm.taobao.org/dist/electron/";
     然后重新再文件夹中安装electron
     就可以安装成功了
+2. 系统报错Uncaught ReferenceError: require is not defined
+解决：
+开启BrowserWindow的nodeIntegration: true
 
+mainWindow = new BrowserWindow({
+  //...
+  webPreferences: {
+     nodeIntegration: true
+  }
+})

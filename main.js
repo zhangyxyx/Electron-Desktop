@@ -1,23 +1,24 @@
 // Modules to control application life and create native browser window
 const {app, BrowserWindow,Menu,ipcMain} = require('electron')
 const path = require('path')
-
+let mainWindow
 function createWindow () {
   Menu.setApplicationMenu(null)
   // Create the browser window.
-  const mainWindow = new BrowserWindow({
-    width: 500,
-    height: 350,
+  mainWindow = new BrowserWindow({
+    width: 800,
+    height: 700,
     frame:false,
     titleBarStyle:'hidden',
     webPreferences: {
+      nodeIntegration: true,
       preload: path.join(__dirname, 'preload.js')
     }
   })
   mainWindow.webContents.openDevTools()
   // and load the index.html of the app.
-  mainWindow.loadFile('index.html')
-
+  //mainWindow.loadFile('index/index.html')
+  mainWindow.loadFile('frame/qqiframe.html')
   // Open the DevTools.
   // mainWindow.webContents.openDevTools()
 }
@@ -42,10 +43,14 @@ app.on('activate', function () {
 
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here.
-ipcMain.on('new-window',function(){
-  mainWindow.loadURL(url.format({
-    pathname:path.join(__dirname,'/frame/qqiframe.html'),
-    protocal:'file:',
-    slashes:true
-  }))
+let newwin
+ipcMain.on('add',()=>{
+  newwin = new BrowserWindow({
+    width: 800, 
+    height: 600,
+    frame:false,
+    parent: mainWindow, //win是主窗口
+  })
+  newwin.loadURL(path.join('file:',__dirname,'frame/qqiframe.html')); //new.html是新开窗口的渲染进程
+  newwin.on('closed',()=>{newwin = null})
 })
