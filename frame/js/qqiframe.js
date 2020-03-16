@@ -1,8 +1,8 @@
 $(function(){
     renderlist()
-    $(".content_left").off('click','.listevery').on('click','.listevery',function(){
-        var id=$(this).attr('data-id')
-        renderContent(id)
+    $(".content").off('click','.listevery').on('click','.listevery',function(){
+        //var id=$(this).attr('data-id')
+        //renderContent(id)
     })
 })
 //左侧
@@ -26,22 +26,6 @@ function renderlist(){
                 <p>${data[i]['allnum']}</p>
             </div>
         </div>`
-        $(".content_left").append(html)
+        $(".content").append(html)
     }
-}
-//右侧
-function renderContent(id){
-    $(".content_right").empty()
-    var data={
-        'id1':{'name':'qq好友1',content:[{}]},
-        'id2':{'name':'qq好友2',content:[{}]},
-        'id3':{'name':'qq好友3',content:[{}]},
-        'id4':{'name':'qq好友4',content:[{}]},
-    }
-    var html=`<div class="qqcontent">
-        <div class="qqcontentheader">${data[id]['name']}</div>
-        <div class="qqcontenttop">11111</div>
-        <div class="qqcontentbottom">2222</div>
-    </div>`
-    $(".content_right").html(html)
 }

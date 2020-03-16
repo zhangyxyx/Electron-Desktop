@@ -6,7 +6,7 @@ function createWindow () {
   Menu.setApplicationMenu(null)
   // Create the browser window.
   mainWindow = new BrowserWindow({
-    width: 800,
+    width: 400,
     height: 700,
     frame:false,
     titleBarStyle:'hidden',
